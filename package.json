@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Sean Lang <slang800@gmail.com>",
   "bin": {
-    "tumblr-theme-parser": "./bin/index.js"
+    "tumblr-theme-parser": "./dist/cli.js"
   },
   "dependencies": {
     "argparse": "^1.0.2",
@@ -27,9 +27,12 @@
     "compile"
   ],
   "license": "GPLv3",
-  "main": "lib",
+  "main": "dist",
   "repository": "git://github.com/slang800/tumblr-theme-parser.git",
   "scripts": {
+    "build": "rm -rf dist && mkdir dist && npm run build:parser && npm run build:cli",
+    "build:parser": "pegjs src/parser.pegjs dist/parser.js",
+    "build:cli": "coffee -o dist -c src",
     "test": "mocha"
   }
 }
