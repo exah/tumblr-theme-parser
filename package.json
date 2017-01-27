@@ -1,11 +1,15 @@
 {
-  "name": "tumblr-theme-parser",
+  "name": "@exah/tumblr-theme-parser",
   "description": "parse and compile tumblr themes",
   "version": "1.0.0",
   "author": "Sean Lang <slang800@gmail.com>",
   "bin": {
     "tumblr-theme-parser": "./dist/cli.js"
   },
+  "contributors": [
+    "Sean Lang <slang800@gmail.com>",
+    "John Grishin <hi@johngrish.in>"
+  ],
   "dependencies": {
     "argparse": "^1.0.2",
     "cheerio": "^0.19.0",
@@ -27,7 +31,7 @@
     "compile"
   ],
   "license": "GPLv3",
-  "main": "dist",
+  "main": "dist/index.js",
   "repository": "git://github.com/slang800/tumblr-theme-parser.git",
   "scripts": {
     "build": "rm -rf dist && mkdir dist && npm run build:parser && npm run build:cli",
