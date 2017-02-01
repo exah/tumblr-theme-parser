@@ -55,7 +55,8 @@ compile = (text, data = {}) ->
   if data?['block:Posts']?
     for post in data['block:Posts']
       type = post['PostType']
-      post["block:#{type}Noun"] = true
+      postKey = if type is 'photo' then "block:#{type}Noun" else "block:#{type}"
+      post[postKey] = true
 
   data = transformKeysRecursive(data, (key) ->
     # handle case insensitivity (matches the transformation applied to the AST)
